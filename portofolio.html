@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .body {
+      background-color: #040406;
+    }
+
+    .Mligne {
+      display: flex;
+    }
+
+    .Cligne {
+      margin-right: 50px;
+      display: inline-block;
+      margin-right: 200px;
+      padding-left: 200px;
+    }
+
+    .ligne {
+      width: 280px;
+      color: white;
+      font-family: roboto, arial;
+      font-size: 50px;
+      width: 475px;
+    }
+
+    .ligne2 {
+      font-family: arial;
+      color: white;
+      width: 300px;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .ligne3 {
+      color: white;
+      width: 100px;
+      margin-top: 75px;
+    }
+
+    .ligne4 img {
+      width: 350px;
+      height: 500px;
+      object-fit: cover;
+      margin-top: 20px;
+      padding-right: 300px;
+    }
+
+    .underline {
+      border-bottom: 4px solid rgb(11, 204, 156);
+    }
+
+    .underline2 {
+      border-bottom: 4px solid rgb(11, 204, 156);
+      font-size: 14px;
+      font-family: 'Helvetica Neue', sans-serif;
+      letter-spacing: 2px;
+    }
+
+    .skills-container-1, .skills-container-2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      align-items: start;
+      text-align: left;
+      margin-bottom: 30px;
+      margin-left: 200px;
+    }
+
+    .skill {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: bold;
+      color: white;
+      font-size: 35px;
+      line-height: 1;
+      top: -10px;
+    }
+
+    .experience {
+      color: gray;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: normal;
+      font-size: 15px;
+      margin-top: 2px;
+      top: -10px;
+    }
+
+    .part3 {
+      color: white;
+      align-items: center;
+      text-align: left;
+      justify-content: space-between;
+      width: 75%;
+      display: flex;
+      margin-left: 200px;
+      margin-right: 0;
+    }
+
+    .title3 {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: bold;
+      font-size: 50px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Ensures images are responsive */
+      gap: 80px; /* Adds gap between the images */
+      justify-content: center; /* Centers the images */
+      padding: 0 200px 50px 200px; /* Adjust the padding */
+      box-sizing: border-box;
+    }
+
+    .card {
+      padding-top: 10px;
+      background-color: transparent;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .DESCRIPTION {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .tags p {
+      margin: 0;
+      background-color: #444;
+      padding: 5px 12px;
+      border-radius: 6px;
+      color: white;
+    }
+
+    .contact-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background-color: #040406;
+      padding: 100px 200px;
+      gap: 300px;
+    }
+
+    .contact-left {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .contact-title {
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .contact-message {
+      color: rgb(96, 96, 96);
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      max-width: 300px;
+      
+    }
+
+    .contact-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #444;
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      padding: 10px 5px;
+      margin-bottom: 30px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-bottom-color: rgb(11, 204, 156);
+    }
+
+    .contact-form button {
+      width: fit-content;
+      background-color: transparent;
+      border: 2px solid rgb(11, 204, 156);
+      color: rgb(11, 204, 156);
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: rgb(11, 204, 156);
+      color: #040406;
+    }
+
+    /* Header section with name and social media icons */
+    .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #040406;
+  padding: 50px 200px;
+  border-top: 2px solid #444;
+}
+
+.header-left h1 {
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 24px;
+  margin: 0;
+}
+
+.header-right a {
+  color: white;
+  font-size: 20px;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.header-right a:hover {
+  color: rgb(11, 204, 156);
+}
+
+
+    .fab {
+      font-size: 30px;
+    }
+
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<body class="body">
+  <div class="Mligne">
+    <div class="Cligne">
+      <p style="color: white;">Lionel Ilboudo</p>
+      <h1 class="ligne">Nice to meet you! I'm <span class="underline"> Lionel Ilboudo</span></h1>
+      <p class="ligne2">Based in Ghana, I'm a front-end developer passionate about building web apps that users love.</p>
+      <p class="ligne3"><span class="underline2"> Contact me </span></p>
+    </div>
+
+    <div class="ligne4">
+      <img src="MJ24.jpeg" alt="jojo">
+    </div>
+  </div>
+
+  <hr class="vertical-line">
+
+  <!-- First skills section -->
+  <div class="skills-container-1">
+    <div class="skill">
+      <p>HTML</p>
+      <p class="experience">4 years of experience</p>
+    </div>
+    <div class="skill">
+      <p>CSS</p>
+      <p class="experience">4 years of experience</p>
+    </div>
+    <div class="skill">
+      <p>JavaScript</p>
+      <p class="experience">4 years of experience</p>
+    </div>
+  </div>
+
+  <!-- Second skills section -->
+  <div class="skills-container-2">
+    <div class="skill">
+      <p>Accessibility</p>
+      <p class="experience">4 years of experience</p>
+    </div>
+    <div class="skill">
+      <p>React</p>
+      <p class="experience">4 years of experience</p>
+    </div>
+    <div class="skill">
+      <p>Sass</p>
+      <p class="experience">4 years of experience</p>
+    </div>
+  </div>
+
+  <div class="part3">
+    <p class="title3"> Projects</p>
+    <p><span class="underline2">Contact me </span></p>
+  </div>
+
+  <!-- 🛠️ Project Cards Grid -->
+  <div class="container">
+    <div class="card">
+      <img src="portofolio.jpeg" alt="portofolio">
+      <p class="DESCRIPTION">DESIGN PORTFOLIO</p>
+      <div class="tags">
+        <p>HTML</p>
+        <p>CSS</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="e-learning.jpeg" alt="E-learning Cover">
+      <p class="DESCRIPTION">E-LEARNING LANDING PAGE</p>
+      <div class="tags">
+        <p>HTML</p>
+        <p>CSS</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="todo app.jpg" alt="todo app">
+      <p class="DESCRIPTION">TODO WEB APP</p>
+      <div class="tags">
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="entertainment.jpg" alt="entertainment">
+      <p class="DESCRIPTION">ENTERTAINMENT WEB APP</p>
+      <div class="tags">
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="memory app.jpg" alt="memory app">
+      <p class="DESCRIPTION">MEMORY GAME</p>
+      <div class="tags">
+        <p>JavaScript</p>
+        <p>HTML</p>
+        <p>CSS</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="art gallery.jpg" alt="art gallery">
+      <p class="DESCRIPTION">ART GALLERY SHOWCASE</p>
+      <div class="tags">
+        <p>CSS</p>
+        <p>HTML</p>
+        <p>JavaScript</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Contact Section moved OUTSIDE .container -->
+  <div class="contact-section">
+    <div class="contact-left">
+      <h2 class="contact-title">Contact</h2>
+      <p class="contact-message">
+        I would love to hear about your project and how I could help. Please fill in the form, and I'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+
+
+  <!-- Header Section at the End -->
+  <!-- ✅ Footer Header Section -->
+<div class="header">
+  <div class="header-left">
+    <h1>Lionel Ilboudo</h1>
+  </div>
+  <div class="header-right">
+    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+
+</body>
+</html>
